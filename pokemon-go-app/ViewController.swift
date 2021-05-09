@@ -11,7 +11,6 @@ import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    
     @IBOutlet weak var map: MKMapView!
     var localizationManager = CLLocationManager()
     var counter = 0
@@ -24,9 +23,49 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         localizationManager.requestWhenInUseAuthorization() // Prompts user authorization to have access to location
         localizationManager.startUpdatingLocation() // Updates automatically the user location
         
+        // Display pokemons:
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
+            
+            if let coordinates = self.localizationManager.location?.coordinate {
+                let annotation = MKPointAnnotation()
+                
+                // Generates a random latitude and longitude next to the user
+                let randomLatitude = (Double(arc4random_uniform(400)) - 250) / 100000.0
+                let randomLongitude = (Double(arc4random_uniform(400)) - 250) / 100000.0
+                
+                annotation.coordinate = coordinates
+                annotation.coordinate.latitude += randomLatitude
+                annotation.coordinate.latitude += randomLongitude
+                
+                self.map.addAnnotation(annotation)
+            }
+            
+        } // Every 8 seconds, this block of code will be executed.
+        
     }
     
-    // Whith this method we can retrieve the user's location (we'll use it to center the user in the map):
+    // Method to display the annotations as images:
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        
+        if annotation is MKUserLocation {
+            annotationView.image = UIImage(named: "player")
+        } else {
+            annotationView.image = UIImage(named: "pikachu-2")
+        }
+        
+        var frame = annotationView.frame
+        frame.size.height = 40
+        frame.size.width = 40
+        
+        annotationView.frame = frame
+        
+        return annotationView
+        
+    }
+    
+    // With this method we can retrieve the user's location (we'll use it to center the user in the map):
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if counter < 3 {
