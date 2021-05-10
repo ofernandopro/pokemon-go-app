@@ -38,9 +38,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 let randomPokemonIndex = arc4random_uniform(totalPokemons)
                 
                 let pokemon = self.pokemons[Int(randomPokemonIndex)]
-                print(pokemon.name)
                 
-                let annotation = PokemonAnnotation(coordinates: coordinates)
+                
+                let annotation = PokemonAnnotation(coordinates: coordinates, pokemon: pokemon)
                 
                 // Generates a random latitude and longitude next to the user
                 let randomLatitude = (Double(arc4random_uniform(400)) - 250) / 100000.0
@@ -64,7 +64,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if annotation is MKUserLocation {
             annotationView.image = UIImage(named: "player")
         } else {
-            annotationView.image = UIImage(named: "pikachu-2")
+            let pokemon = (annotation as! PokemonAnnotation).pokemon
+            
+            annotationView.image = UIImage(named: pokemon.imageName!)
         }
         
         var frame = annotationView.frame
