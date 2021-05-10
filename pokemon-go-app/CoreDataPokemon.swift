@@ -18,6 +18,25 @@ class CoreDataPokemon {
         return context!
     }
     
+    func retrieveAllPokemons() -> [Pokemon] {
+        
+        let context = self.getContext()
+        
+        do {
+            let pokemons = try context.fetch(Pokemon.fetchRequest()) as! [Pokemon]
+            
+            if pokemons.count == 0 {
+                self.addAllPokemons()
+                return self.retrieveAllPokemons()
+            }
+            
+            return pokemons
+        } catch {}
+        
+        return []
+        
+    }
+    
     // Add all pokemons:
     func addAllPokemons() {
         

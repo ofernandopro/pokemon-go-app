@@ -14,6 +14,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var map: MKMapView!
     var localizationManager = CLLocationManager()
     var counter = 0
+    var coreDataPokemon: CoreDataPokemon!
+    var pokemons: [Pokemon] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +25,27 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         localizationManager.requestWhenInUseAuthorization() // Prompts user authorization to have access to location
         localizationManager.startUpdatingLocation() // Updates automatically the user location
         
+        // Retrieve pokemons:
+        self.coreDataPokemon = CoreDataPokemon()
+        self.pokemons = self.coreDataPokemon.retrieveAllPokemons() // Return all pokemons to the array pokemons
+        
         // Display pokemons:
         Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
             
             if let coordinates = self.localizationManager.location?.coordinate {
-                let annotation = MKPointAnnotation()
+                
+                let totalPokemons = UInt32(self.pokemons.count)
+                let randomPokemonIndex = arc4random_uniform(totalPokemons)
+                
+                let pokemon = self.pokemons[Int(randomPokemonIndex)]
+                print(pokemon.name)
+                
+                let annotation = PokemonAnnotation(coordinates: coordinates)
                 
                 // Generates a random latitude and longitude next to the user
                 let randomLatitude = (Double(arc4random_uniform(400)) - 250) / 100000.0
                 let randomLongitude = (Double(arc4random_uniform(400)) - 250) / 100000.0
                 
-                annotation.coordinate = coordinates
                 annotation.coordinate.latitude += randomLatitude
                 annotation.coordinate.latitude += randomLongitude
                 
