@@ -17,6 +17,7 @@
 		C45DB58326474F5A009BD81D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C45DB58226474F5A009BD81D /* MapKit.framework */; };
 		C4F3891A264973E3003457F3 /* CoreDataPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F38919264973E3003457F3 /* CoreDataPokemon.swift */; };
 		C4F3891C2649856A003457F3 /* PokemonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3891B2649856A003457F3 /* PokemonAnnotation.swift */; };
+		C4FF6498264C797500095CF6 /* PokeAgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FF6497264C797500095CF6 /* PokeAgendaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C45DB58226474F5A009BD81D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C4F38919264973E3003457F3 /* CoreDataPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPokemon.swift; sourceTree = "<group>"; };
 		C4F3891B2649856A003457F3 /* PokemonAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAnnotation.swift; sourceTree = "<group>"; };
+		C4FF6497264C797500095CF6 /* PokeAgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAgendaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				C45DB56E26474E52009BD81D /* ViewController.swift */,
 				C4F38919264973E3003457F3 /* CoreDataPokemon.swift */,
 				C4F3891B2649856A003457F3 /* PokemonAnnotation.swift */,
+				C4FF6497264C797500095CF6 /* PokeAgendaViewController.swift */,
 				C45DB57026474E52009BD81D /* Main.storyboard */,
 				C45DB57626474E55009BD81D /* Assets.xcassets */,
 				C45DB57826474E55009BD81D /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 			files = (
 				C45DB56F26474E52009BD81D /* ViewController.swift in Sources */,
 				C45DB57526474E52009BD81D /* pokemon_go_app.xcdatamodeld in Sources */,
+				C4FF6498264C797500095CF6 /* PokeAgendaViewController.swift in Sources */,
 				C45DB56B26474E52009BD81D /* AppDelegate.swift in Sources */,
 				C45DB56D26474E52009BD81D /* SceneDelegate.swift in Sources */,
 				C4F3891C2649856A003457F3 /* PokemonAnnotation.swift in Sources */,

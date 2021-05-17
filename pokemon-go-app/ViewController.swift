@@ -79,6 +79,21 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
+    // This method is called every time the user taps in an annotation
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let annotation = view.annotation
+        let pokemon = (view.annotation as! PokemonAnnotation).pokemon
+        
+        mapView.deselectAnnotation(annotation, animated: true)
+        
+        if annotation is MKUserLocation {
+            return
+        }
+        self.coreDataPokemon.savePokemon(pokemon: pokemon)
+        
+    }
+    
     // With this method we can retrieve the user's location (we'll use it to center the user in the map):
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         

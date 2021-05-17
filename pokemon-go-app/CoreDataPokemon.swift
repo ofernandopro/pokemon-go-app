@@ -18,6 +18,20 @@ class CoreDataPokemon {
         return context!
     }
     
+    func retrieveCapturedPokemons(captured: Bool) -> [Pokemon] {
+        let context = self.getContext()
+        let request = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
+        print(captured)
+        request.predicate = NSPredicate(format: "captured == %@", NSNumber(value: captured))
+        
+        do {
+            let pokemons = try context.fetch(request) as [Pokemon]
+            return pokemons
+        } catch {}
+        
+        return []
+    }
+    
     func retrieveAllPokemons() -> [Pokemon] {
         
         let context = self.getContext()
@@ -35,6 +49,16 @@ class CoreDataPokemon {
         
         return []
         
+    }
+    
+    func savePokemon(pokemon: Pokemon) {
+        
+        let context = self.getContext()
+        pokemon.captured = true
+        
+        do {
+            try context.save()
+        } catch {}
     }
     
     // Add all pokemons:
