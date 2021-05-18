@@ -103,8 +103,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     self.coreDataPokemon.savePokemon(pokemon: pokemon)
                     self.map.removeAnnotation(annotation!)
                     
-                    let alertController = UIAlertController(title: "Parabéns!",
-                                                            message: "Você capturou o pokémon: \(pokemon.name!)",
+                    let alertController = UIAlertController(title: "Congratulations!",
+                                                            message: "You captured the pokémon: \(pokemon.name!)",
                                                             preferredStyle: .alert)
                     let ok = UIAlertAction(title: "ok",
                                            style: .default,
@@ -116,8 +116,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     
                 }
                 else {
-                    let alertController = UIAlertController(title: "Você não pode capturar!",
-                                                            message: "Você precisa se aproximar mais para capturar o \(pokemon.name!)",
+                    let alertController = UIAlertController(title: "You cannot capture it!",
+                                                            message: "You need to get closer to capture \(pokemon.name!)",
                                                             preferredStyle: .alert)
                     let ok = UIAlertAction(title: "ok",
                                            style: .default,
