@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C45DB56726474E52009BD81D /* pokemon-go-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokemon-go-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C45DB56726474E52009BD81D /* Pokémon GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokémon GO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45DB56A26474E52009BD81D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C45DB56C26474E52009BD81D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C45DB56E26474E52009BD81D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		C45DB56826474E52009BD81D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C45DB56726474E52009BD81D /* pokemon-go-app.app */,
+				C45DB56726474E52009BD81D /* Pokémon GO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			);
 			name = "pokemon-go-app";
 			productName = "pokemon-go-app";
-			productReference = C45DB56726474E52009BD81D /* pokemon-go-app.app */;
+			productReference = C45DB56726474E52009BD81D /* Pokémon GO.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -359,7 +359,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fernandomoreira.pokemon-go-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pokémon GO";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -376,7 +376,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fernandomoreira.pokemon-go-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pokémon GO";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

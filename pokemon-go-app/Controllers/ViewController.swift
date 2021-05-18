@@ -100,11 +100,32 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             if let coord = self.localizationManager.location?.coordinate {
                 
                 if self.map.visibleMapRect.contains(MKMapPoint(coord)) {
-                    print("Voce pode capturar")
                     self.coreDataPokemon.savePokemon(pokemon: pokemon)
+                    self.map.removeAnnotation(annotation!)
+                    
+                    let alertController = UIAlertController(title: "Parabéns!",
+                                                            message: "Você capturou o pokémon: \(pokemon.name!)",
+                                                            preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "ok",
+                                           style: .default,
+                                           handler: nil)
+                    
+                    alertController.addAction(ok)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
                 }
                 else {
-                    print("Voce nao pode capturar")
+                    let alertController = UIAlertController(title: "Você não pode capturar!",
+                                                            message: "Você precisa se aproximar mais para capturar o \(pokemon.name!)",
+                                                            preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "ok",
+                                           style: .default,
+                                           handler: nil)
+                    
+                    alertController.addAction(ok)
+                    
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
