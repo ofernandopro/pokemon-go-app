@@ -12,27 +12,27 @@ Pokémon GO clone app/game created for iPhone and iPad with Swift.
 
 Launchscreen:
 <br />
-<img src="doc-images/screenshot_1.png" />
+<img src="doc-images/screenshot_1.png" width="100" />
 <br />
 <br />
 Explore your city to pick up pokémons and add them to your collection:
 <br />
-<img src="doc-images/screenshot_2.png" />
+<img src="doc-images/screenshot_2.png" width="100" />
 <br />
 <br />
 You can just pick them if you get closer:
 <br />
-<img src="doc-images/screenshot_3.png" />
+<img src="doc-images/screenshot_3.png" width="100" />
 <br />
 <br />
 If you are too far, you won't be able to catch it.
 <br />
-<img src="doc-images/screenshot_4.png" />
+<img src="doc-images/screenshot_4.png" width="100" />
 <br />
 <br />
 Check which pokémons are in your collection as you pick them up.
 <br />
-<img src="doc-images/screenshot_5.png" />
+<img src="doc-images/screenshot_5.png" width="100" />
 <br />
 <br />
 
