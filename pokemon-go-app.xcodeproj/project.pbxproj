@@ -69,14 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				C45DB56A26474E52009BD81D /* AppDelegate.swift */,
-				C45DB56C26474E52009BD81D /* SceneDelegate.swift */,
-				C45DB56E26474E52009BD81D /* ViewController.swift */,
-				C4F38919264973E3003457F3 /* CoreDataPokemon.swift */,
-				C4F3891B2649856A003457F3 /* PokemonAnnotation.swift */,
-				C4FF6497264C797500095CF6 /* PokeAgendaViewController.swift */,
-				C45DB57026474E52009BD81D /* Main.storyboard */,
+				C4D7BF522654021C0079C03C /* Resources */,
+				C4D7BF56265405320079C03C /* Models */,
+				C4D7BF54265402A60079C03C /* Views */,
+				C4D7BF53265402720079C03C /* Controllers */,
 				C45DB57626474E55009BD81D /* Assets.xcassets */,
-				C45DB57826474E55009BD81D /* LaunchScreen.storyboard */,
 				C45DB57B26474E55009BD81D /* Info.plist */,
 				C45DB57326474E52009BD81D /* pokemon_go_app.xcdatamodeld */,
 			);
@@ -89,6 +86,49 @@
 				C45DB58226474F5A009BD81D /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4D7BF522654021C0079C03C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C45DB56C26474E52009BD81D /* SceneDelegate.swift */,
+				C4F3891B2649856A003457F3 /* PokemonAnnotation.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C4D7BF53265402720079C03C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C45DB56E26474E52009BD81D /* ViewController.swift */,
+				C4FF6497264C797500095CF6 /* PokeAgendaViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4D7BF54265402A60079C03C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4D7BF55265402BE0079C03C /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C4D7BF55265402BE0079C03C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C45DB57026474E52009BD81D /* Main.storyboard */,
+				C45DB57826474E55009BD81D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C4D7BF56265405320079C03C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4F38919264973E3003457F3 /* CoreDataPokemon.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

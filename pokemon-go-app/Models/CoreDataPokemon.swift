@@ -21,7 +21,6 @@ class CoreDataPokemon {
     func retrieveCapturedPokemons(captured: Bool) -> [Pokemon] {
         let context = self.getContext()
         let request = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
-        print(captured)
         request.predicate = NSPredicate(format: "captured == %@", NSNumber(value: captured))
         
         do {

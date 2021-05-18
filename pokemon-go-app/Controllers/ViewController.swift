@@ -90,8 +90,25 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if annotation is MKUserLocation {
             return
         }
-        self.coreDataPokemon.savePokemon(pokemon: pokemon)
         
+        if let coordAnnotation = annotation?.coordinate {
+            let region = MKCoordinateRegion.init(center: coordAnnotation, latitudinalMeters: 200, longitudinalMeters: 200)
+            map.setRegion(region, animated: true)
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+            if let coord = self.localizationManager.location?.coordinate {
+                
+                if self.map.visibleMapRect.contains(MKMapPoint(coord)) {
+                    print("Voce pode capturar")
+                    self.coreDataPokemon.savePokemon(pokemon: pokemon)
+                }
+                else {
+                    print("Voce nao pode capturar")
+                }
+            }
+        }
+
     }
     
     // With this method we can retrieve the user's location (we'll use it to center the user in the map):
